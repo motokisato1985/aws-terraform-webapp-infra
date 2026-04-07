@@ -97,8 +97,7 @@ CloudWatch AlarmsとSNSを連携し、以下の項目を監視しています。
 - RDS: CPU使用率（70%以上）、空きストレージ容量減少(25%未満)
 - Logs: アプリケーションエラーログの検知
 
-※SNSサブスクリプション作成後、届いたメールの「Confirm subscription」をクリックして有効化してください
-※一部のアラートについては、Auto ScalingやWAFにより自動的な負荷分散・遮断が行われる設計としています。
+※SNSサブスクリプション作成後、届いたメールの「Confirm subscription」をクリックして有効化してください    ※一部のアラートについては、Auto ScalingやWAFにより自動的な負荷分散・遮断が行われる設計としています。
 
 
 ## 7. 障害対応フロー
@@ -116,10 +115,9 @@ CloudWatch AlarmsとSNSを連携し、以下の項目を監視しています。
 
 
 ## 8. 注意事項
-- 提出用のコードからは、AWSプロフィール名（profile）や機密情報（Access Key等）を削除しています。
-　実行時は環境変数やデフォルトプロフィールを使用してください。
+- 提出用のコードからは、AWSプロフィール名（profile）や機密情報（Access Key等）を削除しています。実行時は環境変数やデフォルトプロフィールを使用してください。
 - 作業終了時はコスト削減のため、以下の操作を実施推奨します。
-　* **NATゲートウェイ:** networkフォルダ内の `variables.tf` 内の `default` を `0` に変更し、`terraform plan` → `terraform apply` でリソースの削除を行ってください。
+　  * **NATゲートウェイ:** networkフォルダ内の `variables.tf` 内の `default` を `0` に変更し、`terraform plan` → `terraform apply` でリソースの削除を行ってください。
     * **RDS:** AWSマネジメントコンソール上で一時停止を行ってください。
     * **ECSタスク:** AWS CLIコマンドでタスクの停止を行ってください。
         ```bash
